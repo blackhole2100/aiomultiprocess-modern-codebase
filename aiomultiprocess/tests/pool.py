@@ -1,4 +1,4 @@
-# Copyright 2022 Amethyst Reese
+# Copyright 2022 K O
 # Licensed under the MIT license
 
 

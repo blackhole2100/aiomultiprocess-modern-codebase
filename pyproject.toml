@@ -5,7 +5,7 @@ build-backend = "flit_core.buildapi"
 [project]
 name = "ai-multiprocess"
 authors = [
-    {name = "Amethyst Reese", email="amethyst@n7.gg"},
+    {name = "K O", email="###"},
 ]
 readme = "README.md"
 classifiers = [
@@ -20,7 +20,7 @@ requires-python = ">=3.8"
 
 [project.urls]
 Documentation = "https://ai-multiprocess.omnilib.dev/en/latest/"
-Github = "https://github.com/omnilib/ai-multiprocess"
+Github = "https://github.com/blackhole2100/aiomultiprocess-modern-codebase"
 
 [project.optional-dependencies]
 dev = [

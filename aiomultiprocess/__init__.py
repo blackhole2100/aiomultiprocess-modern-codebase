@@ -1,11 +1,11 @@
-# Copyright 2022 Amethyst Reese
+# Copyright 2022 K O
 # Licensed under the MIT license
 
 """
 AsyncIO version of the standard multiprocessing module
 """
 
-__author__ = "Amethyst Reese"
+__author__ = "K O"
 
 from .__version__ import __version__
 from .core import Process, set_context, set_start_method, Worker

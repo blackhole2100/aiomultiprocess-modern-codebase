@@ -21,8 +21,8 @@ import datetime
 import os
 
 project = "ai-multiprocess"
-copyright = f"{datetime.date.today().year}, Amethyst Reese"
-author = "Amethyst Reese"
+copyright = f"{datetime.date.today().year}, K O"
+author = "K O"
 
 
 # -- General configuration ---------------------------------------------------
@@ -71,7 +71,7 @@ html_theme_options = {
     "show_powered_by": False,
     "sidebar_collapse": False,
     "extra_nav_links": {
-        "Report Issues": "https://github.com/omnilib/ai-multiprocess/issues"
+        "Report Issues": "https://github.com/blackhole2100/aiomultiprocess-modern-codebase/issues"
     },
 }
 
