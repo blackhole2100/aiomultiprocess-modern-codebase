@@ -3,7 +3,7 @@ requires = ["flit_core >=2,<4"]
 build-backend = "flit_core.buildapi"
 
 [project]
-name = "aiomultiprocess"
+name = "ai-multiprocess"
 authors = [
     {name = "Amethyst Reese", email="amethyst@n7.gg"},
 ]
@@ -19,8 +19,8 @@ dynamic = ["version", "description"]
 requires-python = ">=3.8"
 
 [project.urls]
-Documentation = "https://aiomultiprocess.omnilib.dev/en/latest/"
-Github = "https://github.com/omnilib/aiomultiprocess"
+Documentation = "https://ai-multiprocess.omnilib.dev/en/latest/"
+Github = "https://github.com/omnilib/ai-multiprocess"
 
 [project.optional-dependencies]
 dev = [
@@ -45,16 +45,16 @@ exclude = [
 ]
 
 [tool.attribution]
-name = "aiomultiprocess"
-package = "aiomultiprocess"
+name = "ai-multiprocess"
+package = "ai-multiprocess"
 signed_tags = true
 version_file = true
 ignored_authors = ["dependabot", "pyup.io"]
 
 [tool.coverage.run]
 branch = true
-include = ["aiomultiprocess/*"]
-omit = ["aiomultiprocess/tests/*"]
+include = ["ai-multiprocess/*"]
+omit = ["ai-multiprocess/tests/*"]
 concurrency = ["multiprocessing"]
 
 [tool.coverage.report]

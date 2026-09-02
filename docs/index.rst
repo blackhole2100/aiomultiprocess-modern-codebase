@@ -1,4 +1,4 @@
-aiomultiprocess
+ai-multiprocess
 ===============
 
 .. mdinclude:: ../README.md

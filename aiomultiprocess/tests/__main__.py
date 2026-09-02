@@ -4,4 +4,4 @@
 import unittest
 
 if __name__ == "__main__":  # pragma: no cover
-    unittest.main(module="aiomultiprocess.tests", verbosity=2)
+    unittest.main(module="ai-multiprocess.tests", verbosity=2)

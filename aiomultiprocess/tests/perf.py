@@ -5,7 +5,7 @@ import asyncio
 import time
 from unittest import TestCase
 
-import aiomultiprocess as amp
+import ai-multiprocess as amp
 from .base import perf_test
 
 PERF_SETS = [

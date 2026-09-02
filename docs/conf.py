@@ -20,7 +20,7 @@
 import datetime
 import os
 
-project = "aiomultiprocess"
+project = "ai-multiprocess"
 copyright = f"{datetime.date.today().year}, Amethyst Reese"
 author = "Amethyst Reese"
 
@@ -67,11 +67,11 @@ html_theme_options = {
     "badge_branch": "master",
     "github_button": False,
     "github_user": "omnilib",
-    "github_repo": "aiomultiprocess",
+    "github_repo": "ai-multiprocess",
     "show_powered_by": False,
     "sidebar_collapse": False,
     "extra_nav_links": {
-        "Report Issues": "https://github.com/omnilib/aiomultiprocess/issues"
+        "Report Issues": "https://github.com/omnilib/ai-multiprocess/issues"
     },
 }
 

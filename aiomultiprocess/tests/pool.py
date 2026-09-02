@@ -5,9 +5,9 @@
 import asyncio
 from unittest import TestCase
 
-import aiomultiprocess as amp
-from aiomultiprocess.core import get_context
-from aiomultiprocess.pool import PoolWorker, ProxyException
+import ai-multiprocess as amp
+from ai-multiprocess.core import get_context
+from ai-multiprocess.pool import PoolWorker, ProxyException
 from .base import async_test, mapper, raise_fn, starmapper, two
 
 

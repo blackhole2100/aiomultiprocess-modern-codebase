@@ -7,7 +7,7 @@ import time
 from unittest import TestCase
 from unittest.mock import patch
 
-import aiomultiprocess as amp
+import ai-multiprocess as amp
 from .base import (
     async_test,
     do_nothing,
@@ -188,7 +188,7 @@ class CoreTest(TestCase):
             result = await amp.Worker(target=inline, args=(17,), name="test_inline")
             self.assertEqual(result, 17)
 
-    @patch("aiomultiprocess.core.set_start_method")
+    @patch("ai-multiprocess.core.set_start_method")
     @async_test
     async def test_set_context(self, ssm_mock):
         amp.set_context()

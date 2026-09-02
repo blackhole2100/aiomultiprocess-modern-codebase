@@ -1,4 +1,4 @@
-PKG:=aiomultiprocess
+PKG:=ai-multiprocess
 EXTRAS:=dev,docs
 
 .venv:
@@ -25,7 +25,7 @@ lint:
 	python -m black --check $(PKG)
 
 test:
-	python -m coverage run -m aiomultiprocess.tests
+	python -m coverage run -m ai-multiprocess.tests
 	python -m coverage combine
 	python -m coverage report
 	python -m mypy $(PKG)
@@ -34,11 +34,11 @@ perf:
 	export PERF_TESTS=1 && make test
 
 .PHONY: html
-html: .venv README.md docs/* docs/*/* aiomultiprocess/*
+html: .venv README.md docs/* docs/*/* ai-multiprocess/*
 	source .venv/bin/activate && sphinx-build -ab html docs html
 
 clean:
-	rm -rf build dist html README MANIFEST aiomultiprocess.egg-info
+	rm -rf build dist html README MANIFEST ai-multiprocess.egg-info
 
 distclean: clean
 	rm -rf .venv

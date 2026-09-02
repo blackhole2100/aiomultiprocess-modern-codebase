@@ -3,7 +3,7 @@
 
 from unittest import TestCase
 
-import aiomultiprocess as amp
+import ai-multiprocess as amp
 
 
 class SchedulerTest(TestCase):

@@ -43,10 +43,10 @@ def set_start_method(method: Optional[str] = DEFAULT_START_METHOD) -> None:
     platforms, and trades a small cost on process startup for potentially large savings
     on memory usage of child processes.
 
-    Passing an explicit string (eg, "fork") will force aiomultiprocess to use the given
+    Passing an explicit string (eg, "fork") will force ai-multiprocess to use the given
     start method instead of "spawn".
 
-    Passing an explicit `None` value will force aiomultiprocess to use CPython's default
+    Passing an explicit `None` value will force ai-multiprocess to use CPython's default
     start method for the current platform rather than defaulting to "spawn".
 
     See the official multiprocessing documentation for details on start methods:

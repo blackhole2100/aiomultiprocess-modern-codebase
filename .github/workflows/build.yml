@@ -8,7 +8,7 @@ on:
   pull_request:
 
 jobs:
-  aiomultiprocess:
+  ai-multiprocess:
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false

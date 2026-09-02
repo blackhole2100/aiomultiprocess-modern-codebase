@@ -2,7 +2,7 @@
 API Reference
 =============
 
-.. module:: aiomultiprocess
+.. module:: ai-multiprocess
 
 Process Pools
 -------------

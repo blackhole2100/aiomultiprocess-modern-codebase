@@ -1,4 +1,4 @@
-# Contributing to aiomultiprocess
+# Contributing to ai-multiprocess
 
 ## Preparation
 
@@ -10,7 +10,7 @@ You can do this with pyenv and virtualenv:
 
     $ pyenv install 3.6.5
     $ pyenv shell 3.6.5
-    $ python3 -m venv .aiomultiprocess
+    $ python3 -m venv .ai-multiprocess
     $ source .py3/bin/activate
 
 
@@ -19,7 +19,7 @@ You can do this with pyenv and virtualenv:
 Once in your development environment, install the
 appropriate linting tools and dependencies:
 
-    $ cd <path/to/aiomultiprocess>
+    $ cd <path/to/ai-multiprocess>
     $ make setup dev
 
 

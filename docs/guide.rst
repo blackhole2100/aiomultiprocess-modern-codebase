@@ -2,13 +2,13 @@ User Guide
 ==========
 
 
-aiomultiprocess provides an interface similar to, but more flexible than, the
+ai-multiprocess provides an interface similar to, but more flexible than, the
 standard :py:mod:`multiprocessing` module. In the most common use case, the
-:class:`~aiomultiprocess.Pool` class provides a simple mechanism for running
+:class:`~ai-multiprocess.Pool` class provides a simple mechanism for running
 coroutines on multiple worker processes::
 
     from aiohttp import request
-    from aiomultiprocess import Pool
+    from ai-multiprocess import Pool
 
     async def get(url):
         async with request("GET", url) as response:
@@ -25,11 +25,11 @@ Workers
 -------
 
 For asynchronous jobs needing a dedicated process per job, the
-:class:`~aiomultiprocess.Worker` class will run the desired coroutine on
+:class:`~ai-multiprocess.Worker` class will run the desired coroutine on
 a fresh child process and and return the final result back to the main process::
 
     from aiohttp import request
-    from aiomultiprocess import Worker
+    from ai-multiprocess import Worker
 
     async def get(url, method="GET"):
         async with request(method, url) as response:
@@ -59,14 +59,14 @@ method::
 Process Pools
 -------------
 
-The :class:`~aiomultiprocess.Pool` class provides an easier method of managing
+The :class:`~ai-multiprocess.Pool` class provides an easier method of managing
 multiple workers, such as spreading jobs across a fixed number of worker
 processes and running multiple jobs concurrently on each worker.
 
 Individual jobs can be queued using the ``apply()`` method::  
 
     from asyncio import gather
-    from aiomultiprocess import Pool
+    from ai-multiprocess import Pool
 
     async def get(url):
         async with request("GET", url) as response:
@@ -102,7 +102,7 @@ order as the inputs::
 Advanced Usage
 --------------
 
-The default configuration of aiomultiprocess should be sufficient for most
+The default configuration of ai-multiprocess should be sufficient for most
 use cases, but it does offer the ability to change performance options
 for different workloads, and to better integrate with other frameworks.
 
@@ -113,7 +113,7 @@ In the standard :py:mod:`multiprocessing` module, child processes default to
 "forked" processes on Linux (and macOS for Python 3.7 or older), and "spawn"
 processes on Windows (and macOS for Python 3.8 and newer). 
 
-By default, aiomultiprocess uses spawned worker processes, regardless of the
+By default, ai-multiprocess uses spawned worker processes, regardless of the
 host operating system. This provides the benefit of consistent behavior
 ("forked" processes aren't available on Windows and have limitations on macOS)
 and also reduces the amount of memory used by the process pool.
@@ -124,12 +124,12 @@ types defined at runtime, cannot be serialized to these freshly spawned
 processes.
 
 If forked processes are required, or if the "forkserver" method is preferred,
-the :func:`~aiomultiprocess.set_start_method` function must be called
+the :func:`~ai-multiprocess.set_start_method` function must be called
 before creating workers or process pools::
 
-    import aiomultiprocess
+    import ai-multiprocess
 
-    aiomultiprocess.set_start_method("fork")
+    ai-multiprocess.set_start_method("fork")
 
 For more detail, see the :py:mod:`multiprocessing` module documentation for
 `Contexts and start methods <https://docs.python.org/3/library/multiprocessing.html#contexts-and-start-methods>`_
@@ -139,12 +139,12 @@ Initializers
 ^^^^^^^^^^^^
 
 In some cases, there may be a need to run arbitrary code in the child process
-before accepting and running jobs. aiomultiprocess supports the use of an
+before accepting and running jobs. ai-multiprocess supports the use of an
 "initializer" function, and if given, will run this function with the given
 arguments in each child process, after the async event loop has been created::
 
     import logging
-    from aiomultiprocess import Pool
+    from ai-multiprocess import Pool
 
     def setup_logging(level=logging.WARNING):
         logging.basicConfig(level=level)
@@ -159,13 +159,13 @@ Exceptions
 ^^^^^^^^^^^^
 
 Exceptions raised in worker processes are silenced and transferred back to main
-process, where they are turned into :class:`~aiomultiprocess.types.ProxyException`
+process, where they are turned into :class:`~ai-multiprocess.types.ProxyException`
 objects.
 In some cases, you may want to something exceptions within the worker process itself.
 You can use provided "exception_handler" hook, for example::
 
     import sentry_sdk
-    from aiomultiprocess import Pool
+    from ai-multiprocess import Pool
 
     async with Pool(
         exception_handler=sentry_sdk.capture_exception
@@ -178,19 +178,19 @@ Using uvloop
 
 If you wish to use `uvloop <https://uvloop.readthedocs.io/index.html>`_
 or some alternative event loop implementation, then you will need to tell
-aiomultiprocess which event loop initializer to use in child processes::
+ai-multiprocess which event loop initializer to use in child processes::
 
     import uvloop
-    from aiomultiprocess import Pool
+    from ai-multiprocess import Pool
 
     async with Pool(loop_initializer=uvloop.new_event_loop) as pool:
         ...
 
-This is also available for use with individual :class:`~aiomultiprocess.Process`
-and :class:`~aiomultiprocess.Worker` objects::
+This is also available for use with individual :class:`~ai-multiprocess.Process`
+and :class:`~ai-multiprocess.Worker` objects::
 
     import uvloop
-    from aiomultiprocess import Process, Worker
+    from ai-multiprocess import Process, Worker
 
     await Process(
         target=some_coro, loop_initializer=uvloop.new_event_loop
@@ -233,10 +233,10 @@ of worker processes in the pool:
   completed, that frees a slot for a new job from the queue.
 
 * The ``scheduler`` for the pool controls how jobs are distributed among queues
-  in the pool. The default :class:`~aiomultiprocess.RoundRobin` scheduler
+  in the pool. The default :class:`~ai-multiprocess.RoundRobin` scheduler
   evenly distributes jobs across all queues in round-robin order. Alternative
   schedulers may assign jobs to queues using arbitrary criteria, but no other
-  scheduler implementation is available by default with aiomultiprocess.
+  scheduler implementation is available by default with ai-multiprocess.
 
 Maximum concurrency of a process pool can be calculated as::
 
